@@ -1,0 +1,66 @@
+\documentclass[twocolumn]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\title{Latexify Demo: Article Class}
+\author{Demo}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+This demonstrates latexify with the standard article document class, showing both single and double column figure layouts.
+
+\section{Single Column Figure}
+
+Figure~\ref{fig:single} shows a single-column figure that spans one column width.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\columnwidth]{plots/article_single.pdf}
+    \caption{Single column figure with latexify formatting.}
+    \label{fig:single}
+\end{figure}
+
+\section{Comparison}
+
+Figure~\ref{fig:default} shows default matplotlib styling for comparison.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\columnwidth]{plots/default.pdf}
+    \caption{Default matplotlib styling -- note the poor integration with document typography.}
+    \label{fig:default}
+\end{figure}
+
+\section{Double Column Figure}
+
+Figure~\ref{fig:double} demonstrates a figure that spans both columns using the \texttt{figure*} environment.
+
+\begin{figure*}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{plots/article_double.pdf}
+    \caption{Double column figure spanning full page width with latexify formatting.}
+    \label{fig:double}
+\end{figure*}
+
+\section{Code}
+
+\begin{verbatim}
+import latexify
+latexify.latexify(columns=1)  # single
+latexify.latexify(columns=2)  # double
+plt.plot(x, y)
+latexify.format_axes(plt.gca())
+latexify.save_fig('plot.pdf')
+\end{verbatim}
+
+\section{Conclusion}
+
+Latexify dramatically improves plot appearance by matching document typography and removing visual clutter.
+
+\end{document}

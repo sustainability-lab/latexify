@@ -1,0 +1,62 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{times}
+
+\begin{document}
+
+\title{\textbf{Latexify Demo: IEEE-Style Format}}
+
+\author{Demo Author \\
+Department of Computer Science \\
+University Name \\
+email@example.com}
+
+\maketitle
+
+\begin{abstract}
+This paper demonstrates the latexify package optimized for IEEE-style conference format, showing compact figure styling appropriate for conference papers.
+\end{abstract}
+
+\textbf{Keywords:} matplotlib, LaTeX, figures, IEEE
+
+\section{Introduction}
+
+IEEE papers require compact, professional figures. Latexify automatically adjusts font sizes and dimensions for the IEEE format.
+
+\section{Methodology}
+
+Figure~\ref{fig:ieee_plot} shows a plot formatted specifically for IEEE documents with appropriate sizing and typography.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\columnwidth]{plots/ieee_single.pdf}
+\caption{IEEE-style formatted plot using latexify.}
+\label{fig:ieee_plot}
+\end{figure}
+
+\section{Implementation}
+
+The IEEE format uses smaller fonts and compact dimensions:
+
+\begin{verbatim}
+latexify.latexify(fig_width=3.4, 
+                  fig_height=2.3)
+plt.rcParams.update({'font.size': 8})
+\end{verbatim}
+
+\section{Results}
+
+Latexify produces professional figures that integrate seamlessly with IEEE document formatting.
+
+\section{Conclusion}
+
+The latexify package enables researchers to create publication-quality figures for IEEE venues with minimal effort.
+
+\begin{thebibliography}{9}
+\bibitem{matplotlib} Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. Computing in Science \& Engineering, 9(3), 90-95.
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,62 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{times}
+
+\begin{document}
+
+\title{\textbf{Latexify Demo: ACM-Style Format}}
+
+\author{Demo Author \\
+Computer Science Department \\
+University Name \\
+demo@example.com}
+
+\date{}
+\maketitle
+
+\begin{abstract}
+This paper demonstrates latexify formatting optimized for ACM-style conference proceedings, showcasing professional figure styling that integrates with conference templates.
+\end{abstract}
+
+\textbf{Keywords:} matplotlib, LaTeX, figures, ACM
+
+\section{Introduction}
+
+ACM conference papers benefit from clean, professional figures. This document demonstrates latexify's ACM-optimized formatting.
+
+\section{Methodology}
+
+Figure~\ref{fig:acm_plot} illustrates a plot formatted for ACM proceedings using latexify.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\columnwidth]{plots/acm_single.pdf}
+  \caption{ACM-formatted plot with latexify styling.}
+  \label{fig:acm_plot}
+\end{figure}
+
+\section{Implementation}
+
+ACM format parameters:
+
+\begin{verbatim}
+latexify.latexify(fig_width=3.3, 
+                  fig_height=2.2)
+plt.rcParams.update({'font.size': 9})
+\end{verbatim}
+
+\section{Results}
+
+Latexify automatically produces figures that match ACM styling guidelines with appropriate font sizes and clean formatting.
+
+\section{Conclusion}
+
+The latexify package streamlines the creation of publication-ready figures for ACM venues, ensuring consistent professional appearance.
+
+\begin{thebibliography}{9}
+\bibitem{matplotlib} Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. Computing in Science \& Engineering, 9(3), 90-95.
+\end{thebibliography}
+
+\end{document}
