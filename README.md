@@ -2,6 +2,8 @@
 
 Professional matplotlib plots for LaTeX documents. Transform ugly default plots into publication-ready figures with just two lines of code.
 
+**Built on the foundational work by [Jack Kelly](https://github.com/jackkelly)** and enhanced for modern research workflows. This package has been successfully used in multiple publications from our sustainability research lab.
+
 ## Why Latexify?
 
 Default matplotlib produces plots that look amateur and clash with your beautiful LaTeX documents. Latexify fixes this by providing:
@@ -21,6 +23,9 @@ The difference is dramatic. Here's a complete LaTeX document showing default mat
 
 ### Page 2: Double Column Layout  
 ![Article Class Comparison - Page 2](examples/article_class-1.png)
+
+### Page 3: Multiple Subplots & Code Examples
+![Article Class Comparison - Page 3](examples/article_class-2.png)
 
 **Key improvements shown:**
 - **Font matching**: Latexify plots use the same fonts as document text
@@ -77,7 +82,17 @@ In your LaTeX document:
 ### ACM Proceedings Format  
 ![ACM Class Example](examples/acm_class.png)
 
-Each example shows how latexify automatically adapts to different academic document formats with appropriate font sizes, spacing, and styling.
+### Beamer Presentations
+![Beamer Slide 1](examples/beamer_class-0.png)
+![Beamer Slide 2](examples/beamer_class-1.png)
+![Beamer Slide 3](examples/beamer_class-2.png)
+
+Each example shows how latexify automatically adapts to different academic document formats with appropriate font sizes, spacing, and styling. The examples include:
+
+- **Code snippets** with proper Python string quotes
+- **3 subplot layouts** optimized for each format
+- **Before/after comparisons** showing the improvement
+- **Complete LaTeX source** for easy adaptation
 
 ## API Reference
 
@@ -113,6 +128,12 @@ plt.rcParams.update({'font.size': 8})
 ```python
 latexify.latexify(fig_width=3.3, fig_height=2.2)
 plt.rcParams.update({'font.size': 9})
+```
+
+### Beamer Presentations
+```python
+latexify.latexify(largeFonts=True, fig_width=4.5, fig_height=3.0)
+# Automatically uses larger fonts suitable for presentations
 ```
 
 ## Finding Column Width for Any Template

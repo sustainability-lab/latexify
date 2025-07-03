@@ -1,0 +1,119 @@
+\documentclass{beamer}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{listings}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\title{Latexify Demo: Beamer Presentations}
+\author{Demo Author}
+\institute{Sustainability Lab}
+\date{\today}
+
+% Code listing style for beamer
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    frame=single,
+    breaklines=true,
+    showstringspaces=false
+}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{The Problem: Default Matplotlib}
+
+Default matplotlib plots look unprofessional in presentations:
+\begin{itemize}
+    \item Font sizes don't match slide text
+    \item Thick borders and visual clutter
+    \item Poor contrast and readability
+    \item Inconsistent styling
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The Solution: Latexify}
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{plots/default.pdf}
+        \caption{Default matplotlib}
+    \end{figure}
+\end{column}
+\begin{column}{0.5\textwidth}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{plots/presentation_beamer.pdf}
+        \caption{Latexify for Beamer}
+    \end{figure}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Minimal Code Example}
+
+\begin{lstlisting}
+import latexify
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Setup for presentations
+latexify.latexify(largeFonts=True, 
+                  fig_width=4.5, 
+                  fig_height=3.0)
+
+# Create plot with LaTeX math
+x = np.linspace(0, 2*np.pi, 100)
+plt.plot(x, np.sin(x), label=r'$\sin(x)$')
+plt.xlabel(r'$x$')
+plt.ylabel(r'$y$')
+plt.legend()
+
+# Clean and save
+latexify.format_axes(plt.gca())
+latexify.save_fig('plot.pdf')
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Results: Professional Presentations}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{plots/presentation_beamer.pdf}
+\end{center}
+
+\begin{itemize}
+    \item Large, readable fonts
+    \item Clean, uncluttered axes  
+    \item Perfect LaTeX math rendering
+    \item Consistent with slide typography
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Three Subplots Example}
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{plots/beamer_subplots.pdf}
+\end{center}
+
+Perfect for showing multiple related results in presentations.
+
+\end{frame}
+
+\end{document}

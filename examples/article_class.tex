@@ -48,16 +48,42 @@ Figure~\ref{fig:double} demonstrates a figure that spans both columns using the 
     \label{fig:double}
 \end{figure*}
 
-\section{Code}
+\section{Minimal Code Example}
+
+The complete code to create publication-ready plots:
 
 \begin{verbatim}
 import latexify
-latexify.latexify(columns=1)  # single
-latexify.latexify(columns=2)  # double
-plt.plot(x, y)
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Setup for single column
+latexify.latexify(columns=1)
+
+# Create plot with LaTeX math
+x = np.linspace(0, 2*np.pi, 100)
+plt.plot(x, np.sin(x), label=r'$\sin(x)$')
+plt.xlabel(r'$x$')
+plt.ylabel(r'$y$')
+plt.legend()
+
+# Clean and save
 latexify.format_axes(plt.gca())
 latexify.save_fig('plot.pdf')
 \end{verbatim}
+
+For double column: just change to \texttt{latexify.latexify(columns=2)}
+
+\section{Three Subplots Example}
+
+Figure~\ref{fig:subplots} demonstrates multiple plots arranged across two columns.
+
+\begin{figure*}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{plots/article_subplots.pdf}
+    \caption{Three subplot example optimized for double-column layout showing (a) sine wave, (b) cosine wave, and (c) damped sine wave.}
+    \label{fig:subplots}
+\end{figure*}
 
 \section{Conclusion}
 

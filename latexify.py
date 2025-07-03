@@ -3,6 +3,10 @@ Latexify - Modern matplotlib formatting for LaTeX documents
 
 Easy-to-use utilities for creating publication-ready plots that integrate
 seamlessly with LaTeX documents.
+
+Originally inspired by and built upon the foundational work by Jack Kelly.
+Enhanced for modern research workflows with support for multiple document
+classes, presentations, and subplot layouts.
 """
 
 import matplotlib
